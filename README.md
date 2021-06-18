@@ -1,5 +1,4 @@
 # fullstack-movies
-# fullstack-movies
 
 IMPORTANTE:
 - Carpeta client --> frontend
