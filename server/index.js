@@ -9,7 +9,7 @@ const db = mysql.createPool({
     user: 'root',
     password: 'Admin2020%',
     database: 'CRUDDataBase',
-    port: '3306'
+    port: '6603'
 })
 
 app.use(cors());
@@ -31,7 +31,8 @@ app.post('/api/insert', (req, res) => {
 
 app.get('/api/get', (req,res) => {
     const sqlSelect = "SELECT * FROM movie_reviews;";
-    db.query(sqlSelect, (err, result) => {
+    db.query(sqlSelect, (error, result) => {
+        if (error) throw error;
         res.send(result);
     })
 });
