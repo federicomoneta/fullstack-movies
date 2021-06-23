@@ -37,4 +37,3 @@ CREATE TABLE movie_reviews(
 	movieName	varchar(100),
 	movieReview	text,
 	PRIMARY KEY (id));
-

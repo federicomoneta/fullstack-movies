@@ -3,6 +3,7 @@ const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser')
 const cors = require('cors');
+const PORT = 3000;
 
 const db = mysql.createPool({
     host: 'localhost',
@@ -18,7 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 
 app.post('/api/insert', (req, res) => {
-
 
     const movieName = req.body.movieName;
     const movieReview = req.body.movieReview;
@@ -38,6 +38,7 @@ app.get('/api/get', (req,res) => {
 });
 
 
-app.listen(3001, () => {
-    console.log("corriendo en el puerto 3001");
-});
+app.listen(PORT, function(err){
+    if (err) console.log("Error in server setup")
+    console.log("Server listening on Port", PORT);
+})
