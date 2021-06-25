@@ -1,0 +1,18 @@
+# Node
+
+FROM node:12.21.0
+
+ENV NODE_ENV=production
+
+COPY ["package.json", "package-lock.json*", "./"]
+
+RUN npm install --production
+
+COPY . .
+
+#COPY wait.sh /wait.sh
+#RUN chmod +x /wait.sh
+
+#CMD [ "node", "index.js" ]
+
+EXPOSE 3000
