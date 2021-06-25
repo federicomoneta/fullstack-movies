@@ -3,7 +3,7 @@
 FROM node:14
 ENV NODE_ENV=production
 
-COPY  ./
+COPY  . /
 WORKDIR ./app
 
 RUN npm install
