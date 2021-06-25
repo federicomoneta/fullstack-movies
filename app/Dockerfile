@@ -3,12 +3,16 @@
 FROM node:14
 ENV NODE_ENV=production
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY  ./
+WORKDIR ./app
 
-RUN npm install --production
+RUN npm install
+RUN npm install mysql
 
 COPY . .
 
-CMD [ "node", "index.js" ]
+RUN apt-get update && apt-get install -y netcat
 
-EXPOSE 3001
+COPY wait.sh /wait.sh
+RUN chmod +x /wait.sh
+
