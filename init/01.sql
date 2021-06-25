@@ -1,5 +1,3 @@
-//CREATE DATABASE CRUDDataBase;
-//USE CRUDDataBase;
 CREATE TABLE movie_reviews(
 	id	integer auto_increment,
 	movieName	varchar(100),
