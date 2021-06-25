@@ -6,11 +6,11 @@ const cors = require('cors');
 const PORT = 3000;
 
 const db = mysql.createPool({
-    host: 'localhost',
+    host: 'db',
     user: 'root',
     password: 'Admin2020%',
     database: 'CRUDDataBase',
-    port: '6603'
+    port: '3306'
 })
 
 app.use(cors());

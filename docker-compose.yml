@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  nodejs:
+    restart: on-failure
+    build:
+      context: ./app
+      dockerfile: node-Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; node index'
+    #entrypoint: ["./wait.sh"]
+
+  db:
+    restart: on-failure
+    build:
+        context: ./app
+        dockerfile: mysql-Dockerfile
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro

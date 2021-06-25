@@ -1,7 +1,6 @@
-# syntax=docker/dockerfile:1
+# MySQL
 
 FROM mysql
-# MAINTAINER csgeek@mail.com
 
 ENV MYSQL_ROOT_PASSWORD Admin2020%
 
