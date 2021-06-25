@@ -37,3 +37,7 @@ CREATE TABLE movie_reviews(
 	movieName	varchar(100),
 	movieReview	text,
 	PRIMARY KEY (id));
+	
+#Para rama manu
+Hice un cambio en el Dockerfile siguiendo los pasos de esta pagina https://codefresh.io/docker-tutorial/node_docker_multistage/
+No se si anda
